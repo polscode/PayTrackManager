@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -25,7 +25,7 @@ public class Report {
     private BigDecimal totalPlanilla;
 
     @Column(nullable = false)
-    private LocalDate date;
+    private LocalDateTime dateTime;
 
     @OneToMany(mappedBy = "report", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Discount>  discounts;
@@ -40,4 +40,9 @@ public class Report {
     @ManyToOne
     @JoinColumn(name = "id_plate")
     private Plate plate;
+
+    @PrePersist
+    private void setCreationTimestamp() {
+        this.dateTime = LocalDateTime.now();
+    }
 }

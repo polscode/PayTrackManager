@@ -10,15 +10,11 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReportResponseDTO {
+public class SaveReportDTO {
     private Long id;
     private BigDecimal totalPlanilla;
-    private BigDecimal totalDiscount;
-    private BigDecimal totalMoney;
-    private BigDecimal totalPayable;
-    private BigDecimal balance;
-    private List<DiscountResponseDTO> discounts;
-    private List<MoneyResponseDTO> monies;
+    private List<DiscountRequestDTO> discounts;
+    private List<MoneyRequestDTO> monies;
     private Long driverId;
     private Long plateId;
 }
