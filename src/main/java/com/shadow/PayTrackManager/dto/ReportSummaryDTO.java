@@ -10,9 +10,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DiscountResponseDTO {
-    private Long id;
-    private String name;
-    private BigDecimal total;
-    private List<BigDecimal> amounts;
+public class ReportSummaryDTO {
+    private BigDecimal totalPlanilla;
+    private List<DiscountDTO> discounts;
+    private List<MoneyDTO> monies;
 }

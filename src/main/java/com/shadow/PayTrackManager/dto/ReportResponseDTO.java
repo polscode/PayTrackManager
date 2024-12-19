@@ -17,8 +17,8 @@ public class ReportResponseDTO {
     private BigDecimal totalMoney;
     private BigDecimal totalPayable;
     private BigDecimal balance;
-    private List<DiscountResponseDTO> discounts;
-    private List<MoneyResponseDTO> monies;
+    private List<DiscountDTO> discounts;
+    private List<MoneyDTO> monies;
     private Long driverId;
     private Long plateId;
 }

@@ -9,8 +9,8 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "tb_amount")
+//@Entity
+//@Table(name = "tb_amount")
 public class Amount {
 
     @Id

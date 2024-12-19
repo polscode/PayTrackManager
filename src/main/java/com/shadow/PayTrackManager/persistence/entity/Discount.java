@@ -3,6 +3,7 @@ package com.shadow.PayTrackManager.persistence.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
@@ -25,6 +26,7 @@ public class Discount {
     @Getter(AccessLevel.NONE)
     private Report report;
 
-    @OneToMany(mappedBy = "discount", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Amount> amounts;
+
+    @Column(scale = 2)
+    private List<BigDecimal> amounts;
 }

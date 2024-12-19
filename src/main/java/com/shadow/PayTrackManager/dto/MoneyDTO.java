@@ -5,12 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DiscountRequestDTO {
-    private String name;
-    private List<BigDecimal> amounts;
+public class MoneyDTO {
+    private Long id;
+    private String denomination;
+    private BigDecimal quantity;
 }

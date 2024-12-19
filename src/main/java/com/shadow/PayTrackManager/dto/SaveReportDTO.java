@@ -13,8 +13,8 @@ import java.util.List;
 public class SaveReportDTO {
     private Long id;
     private BigDecimal totalPlanilla;
-    private List<DiscountRequestDTO> discounts;
-    private List<MoneyRequestDTO> monies;
+    private List<DiscountDTO> discounts;
+    private List<MoneyDTO> monies;
     private Long driverId;
     private Long plateId;
 }
