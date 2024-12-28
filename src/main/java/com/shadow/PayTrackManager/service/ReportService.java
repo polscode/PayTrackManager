@@ -5,11 +5,13 @@ import com.shadow.PayTrackManager.persistence.entity.Report;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.time.LocalDate;
+
 public interface ReportService {
     CalculatedDataDTO calculateReport(ReportSummaryDTO reportSummaryDTO);
-    Page<ReportResponseDTO> findAll(Pageable pageable);
-    Page<Report> findById(Pageable pageable);
-    Page<Report> findByDate(Pageable pageable);
+    Page<BasicReportDataDTO> findAll(Pageable pageable);
+    Page<BasicReportDataDTO> findById(Long id, Pageable pageable);
+    Page<BasicReportDataDTO> findByDate(LocalDate date, Pageable pageable);
     Report save(SaveReportDTO saveReportDTO);
     Report update(UpdateReportDTO updateReportDTO);
 }

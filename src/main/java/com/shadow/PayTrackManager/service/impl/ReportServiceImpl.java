@@ -15,6 +15,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
@@ -57,18 +59,32 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public Page<ReportResponseDTO> findAll(Pageable pageable) {
-        return null;
+    public Page<BasicReportDataDTO> findAll(Pageable pageable) {
+
+        Page<Report> reportPage = reportRepository.findAll(pageable);
+        return reportPage.map(report -> new BasicReportDataDTO(
+           report.getId(),
+           report.getDate()
+        ));
     }
 
     @Override
-    public Page<Report> findById(Pageable pageable) {
-        return null;
+    public Page<BasicReportDataDTO> findById(Long id, Pageable pageable) {
+        Page<Report> reportPage = reportRepository.findById(id, pageable);
+        return reportPage.map(report -> new BasicReportDataDTO(
+                report.getId(),
+                report.getDate()
+        ));
     }
 
     @Override
-    public Page<Report> findByDate(Pageable pageable) {
-        return null;
+    public Page<BasicReportDataDTO> findByDate(LocalDate date, Pageable pageable) {
+
+        Page<Report> reportPage = reportRepository.findByDate(date, pageable);
+        return reportPage.map(report -> new BasicReportDataDTO(
+                report.getId(),
+                report.getDate()
+        ));
     }
 
     @Override
